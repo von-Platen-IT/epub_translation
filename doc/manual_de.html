@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Ebook Translator - Handbuch</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .note {
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .button {
+            background-color: #27ae60;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>AI Ebook Translator - Benutzerhandbuch</h1>
+
+    <img src="../Gemini_Generated_Image_e5xbase5xbase5xb.png" alt="AI Ebook Translator Logo" width="400">
+
+    <p>Willkommen beim <strong>AI Ebook Translator</strong>. Diese Anwendung ermöglicht es Ihnen, E-Books (im
+        <code>.epub</code>-Format) mithilfe moderner KI automatisch ins Deutsche zu übersetzen.</p>
+
+    <h2>Schnellstart</h2>
+
+    <h3>1. Installation</h3>
+    <p>Stellen Sie sicher, dass alle Abhängigkeiten installiert sind:</p>
+    <pre>pip install PyQt6 openai ebooklib beautifulsoup4 odfpy pyinstaller</pre>
+
+    <h3>2. Programm starten</h3>
+    <p>Sie können das Programm direkt über Python starten:</p>
+    <pre>python3 gui_app.py</pre>
+
+    <h2>Bedienung</h2>
+
+    <h3>Schritt 1: Konfiguration</h3>
+    <p>Beim ersten Start müssen Sie Ihre KI-Einstellungen im Bereich <strong>"AI Konfiguration"</strong> vornehmen:</p>
+    <ul>
+        <li><strong>API Key</strong>: Ihr API-Schlüssel (z.B. von OpenAI oder Moonshot AI).</li>
+        <li><strong>Base URL</strong>: Die API-Adresse. Standard ist Moonshot AI
+            (<code>https://api.moonshot.ai/v1</code>).</li>
+        <li><strong>Model Name</strong>: Das KI-Modell (z.B. <code>kimi-k2.5</code>).</li>
+        <li><strong>Parallele Worker</strong>: Anzahl gleichzeitiger Übersetzungen. 3 ist meist optimal.</li>
+    </ul>
+    <p><em>Die Einstellungen werden automatisch gespeichert.</em></p>
+
+    <h3>Schritt 2: Dateien auswählen</h3>
+    <ol>
+        <li>Klicken Sie bei <strong>"E-Book (.epub)"</strong> auf <strong>"Durchsuchen..."</strong>.</li>
+        <li>(Optional) Wählen Sie unter <strong>"Zielordner"</strong> einen Speicherort.</li>
+    </ol>
+
+    <h3>Schritt 3: Übersetzung starten</h3>
+    <p>Klicken Sie auf den grünen Button <span class="button">Übersetzung Starten</span>.</p>
+    <p>Das Programm führt automatisch folgende Schritte aus:</p>
+    <ol>
+        <li><strong>Extraktion</strong>: Zerlegt das Buch in Kapitel.</li>
+        <li><strong>Übersetzung</strong>: Übersetzt jedes Kapitel per KI.</li>
+        <li><strong>Zusammenfügen</strong>: Erstellt ein neues Dokument (<code>.odt</code>).</li>
+    </ol>
+
+    <h2>Überwachung & Fehlerbehebung</h2>
+    <ul>
+        <li><strong>Verlauf</strong>: Zeigt alle Aktionen in Echtzeit an.</li>
+        <li><strong>Fortschritt</strong>: Der blaue Balken zeigt den Gesamtstatus.</li>
+        <li><strong>Abbruch</strong>: Sie können den Vorgang jederzeit stoppen.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Wiederaufnahme:</strong> Falls die Übersetzung fehlschlägt oder gestoppt wird, starten Sie sie einfach
+        erneut im selben Zielordner. Das Programm überspringt bereits übersetzte Dateien automatisch.
+    </div>
+
+</body>
+
+</html>

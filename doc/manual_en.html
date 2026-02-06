@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Ebook Translator - Manual</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+        h1, h2, h3 { color: #2c3e50; }
+        code { background-color: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: Consolas, monospace; }
+        pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        img { max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .note { background-color: #e8f4f8; border-left: 5px solid #3498db; padding: 15px; margin: 20px 0; }
+        .button { background-color: #27ae60; color: white; padding: 5px 10px; border-radius: 3px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>AI Ebook Translator - User Manual</h1>
+    
+    <img src="../Gemini_Generated_Image_e5xbase5xbase5xb.png" alt="AI Ebook Translator Logo" width="400">
+
+    <p>Welcome to the <strong>AI Ebook Translator</strong>. This application allows you to automatically translate E-Books (in <code>.epub</code> format) into German using modern AI technology.</p>
+
+    <h2>Quick Start</h2>
+
+    <h3>1. Installation</h3>
+    <p>Ensure all dependencies are installed:</p>
+    <pre>pip install PyQt6 openai ebooklib beautifulsoup4 odfpy pyinstaller</pre>
+
+    <h3>2. Launching the App</h3>
+    <p>You can run the program directly via Python:</p>
+    <pre>python3 gui_app.py</pre>
+
+    <h2>Usage</h2>
+
+    <h3>Step 1: Configuration</h3>
+    <p>On the first run, you need to configure your AI settings in the <strong>"AI Configuration"</strong> section:</p>
+    <ul>
+        <li><strong>API Key</strong>: Enter your API key here (e.g., from OpenAI or Moonshot AI).</li>
+        <li><strong>Base URL</strong>: The API endpoint. Default is Moonshot AI (<code>https://api.moonshot.ai/v1</code>).</li>
+        <li><strong>Model Name</strong>: The AI model to use (e.g., <code>kimi-k2.5</code>).</li>
+        <li><strong>Workers</strong>: Number of files to translate in parallel. A value of 3 is usually optimal.</li>
+    </ul>
+    <p><em>Settings are saved automatically.</em></p>
+
+    <h3>Step 2: Selecting Files</h3>
+    <ol>
+        <li>Click <strong>"Browse..."</strong> next to <strong>"E-Book (.epub)"</strong> to select your book.</li>
+        <li>(Optional) Select a <strong>"Target Folder"</strong>. If left empty, a new folder will be created in the book's directory.</li>
+    </ol>
+
+    <h3>Step 3: Start Translation</h3>
+    <p>Click the green button <span class="button">Start Translation</span>.</p>
+    <p>The program will automatically:</p>
+    <ol>
+        <li><strong>Extract</strong>: Split the E-Book into chapters.</li>
+        <li><strong>Translate</strong>: Translate each chapter using AI.</li>
+        <li><strong>Merge</strong>: Combine translated texts into a new document (<code>.odt</code>).</li>
+    </ol>
+
+    <h2>Monitoring & Troubleshooting</h2>
+    <ul>
+        <li><strong>Log Window</strong>: Shows detailed real-time activity.</li>
+        <li><strong>Progress Bar</strong>: Displays overall completion status.</li>
+        <li><strong>Stop</strong>: You can cancel the process at any time.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Resuming:</strong> If a translation fails or is stopped, restarting it with the same target folder will skip already translated files, saving you time and API costs.
+    </div>
+
+</body>
+</html>
